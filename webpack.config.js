@@ -4,7 +4,11 @@ const Dotenv = require('dotenv-webpack');
 const deps = require("./package.json").dependencies;
 module.exports = (_, argv) => ({
   output: {
-    publicPath: "http://localhost:8081/",
+    //local
+    // publicPath: "http://localhost:8081/",
+
+    //deploy
+    publicPath: "https://main.d2svqrb4suvshc.amplifyapp.com/"
   },
 
   resolve: {
@@ -49,14 +53,14 @@ module.exports = (_, argv) => ({
       },
       shared: {
         ...deps,
-        react: {
-          singleton: true,
-          requiredVersion: deps.react,
-        },
-        "react-dom": {
-          singleton: true,
-          requiredVersion: deps["react-dom"],
-        },
+        // react: {
+        //   singleton: true,
+        //   requiredVersion: deps.react,
+        // },
+        // "react-dom": {
+        //   singleton: true,
+        //   requiredVersion: deps["react-dom"],
+        // },
       },
     }),
     new HtmlWebPackPlugin({
