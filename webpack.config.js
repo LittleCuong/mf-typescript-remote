@@ -8,7 +8,7 @@ module.exports = (_, argv) => ({
     // publicPath: "http://localhost:8081/",
 
     //deploy
-    publicPath: "https://main.d2svqrb4suvshc.amplifyapp.com/"
+    publicPath: "https://main.dl71rq11tiul9.amplifyapp.com/"
   },
 
   resolve: {
