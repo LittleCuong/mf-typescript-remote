@@ -1,6 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const Dotenv = require('dotenv-webpack');
+const Dotenv = require("dotenv-webpack");
 const deps = require("./package.json").dependencies;
 module.exports = (_, argv) => ({
   output: {
@@ -8,7 +8,7 @@ module.exports = (_, argv) => ({
     // publicPath: "http://localhost:8081/",
 
     //deploy
-    publicPath: "https://main.dl71rq11tiul9.amplifyapp.com/"
+    publicPath: "https://main.d1prd2j1vamtcr.amplifyapp.com/",
   },
 
   resolve: {
@@ -49,7 +49,7 @@ module.exports = (_, argv) => ({
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
-        "./Recipes": "./src/Recipes.js"
+        "./Recipes": "./src/Recipes.js",
       },
       shared: {
         ...deps,
@@ -66,6 +66,6 @@ module.exports = (_, argv) => ({
     new HtmlWebPackPlugin({
       template: "./src/index.html",
     }),
-    new Dotenv()
+    new Dotenv(),
   ],
 });
